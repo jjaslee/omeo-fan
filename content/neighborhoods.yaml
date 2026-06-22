@@ -1,0 +1,56 @@
+# ============================================
+# OAHU NEIGHBORHOODS
+# Edit descriptions when Omeo provides local expertise copy
+# ============================================
+
+neighborhoods:
+  - slug: "honolulu"
+    name: "Honolulu"
+    image: "https://images.unsplash.com/photo-1540959736672-0319f815fc6d?w=800&q=80"
+    description: |
+      PLACEHOLDER: Omeo's take on Honolulu — urban condos, investment opportunities,
+      and the vibrant heart of Oʻahu. From Ala Moana to Downtown, discover city living
+      with island charm.
+    visible: true
+
+  - slug: "kailua"
+    name: "Kailua"
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
+    description: |
+      PLACEHOLDER: Windward Oʻahu's beloved beach town. Kailua offers laid-back
+      luxury, pristine beaches, and a strong sense of community — ideal for families
+      and those seeking the classic Hawaiʻi lifestyle.
+    visible: true
+
+  - slug: "waikiki"
+    name: "Waikīkī"
+    image: "https://images.unsplash.com/photo-1540959736672-0319f815fc6d?w=800&q=80"
+    description: |
+      PLACEHOLDER: World-famous resort district with high-rise living, ocean views,
+      and strong rental investment potential. Omeo helps buyers navigate Waikīkī's
+      unique condo market.
+    visible: true
+
+  - slug: "kapolei"
+    name: "Kapolei"
+    image: "https://images.unsplash.com/photo-1600585154340-be6162a9a0c9?w=800&q=80"
+    description: |
+      PLACEHOLDER: Oʻahu's growing second city. New construction, master-planned
+      communities, and family-friendly neighborhoods with modern amenities.
+    visible: true
+
+  - slug: "kaneohe"
+    name: "Kaneohe"
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
+    description: |
+      PLACEHOLDER: Windward living with stunning Koʻolau mountain views. Kaneohe
+      blends natural beauty with convenient access to Honolulu.
+    visible: true
+
+  - slug: "ewa-beach"
+    name: "Ewa Beach"
+    image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80"
+    description: |
+      PLACEHOLDER: Leeward Oʻahu's coastal community offering value, new developments,
+      and a relaxed suburban atmosphere with ocean access.
+    visible: true

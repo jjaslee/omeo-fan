@@ -1,0 +1,65 @@
+# ============================================
+# Omeo Fan — Site Information
+# Edit this file to update contact info, bio, etc.
+# ============================================
+
+agent:
+  name: "Omeo Fan"
+  title: "Principal Broker"
+  credentials:
+    - "MBA"
+    - "RB-22037"
+  tagline: "Oahu Real Estate Expert"
+  headline: "Local Expertise. Global Reach."
+
+contact:
+  phone: "808-258-6636"
+  phone_display: "(808) 258-6636"
+  email: "omeofan@gmail.com"
+  wechat: "omeo6636"
+  # wechat_qr: "/images/omeo/wechat-qr.png"  # Uncomment when Omeo sends QR code
+
+brokerage:
+  name: "4You Hawaii International Realty"
+  short_name: "4YOU"
+  address: "1314 S. King Street, Suite 755"
+  city: "Honolulu"
+  state: "HI"
+  zip: "96814"
+
+languages:
+  - English
+  - Cantonese
+  - Mandarin
+  - Hakka
+
+about:
+  short: |
+    Omeo Fan is Principal Broker at 4You Hawaii International Realty,
+    offering MBA-level financial expertise and over a decade of Oahu
+    real estate experience for local and international clients.
+  full: |
+    Omeo Fan is Principal Broker at 4You Hawaii International Realty,
+    bringing an MBA in Finance and Management, a BBA in Accounting and
+    Management Information Systems from the University of Hawaiʻi, and
+    over twelve years of experience in Oahu sales, property management,
+    and vacation rentals.
+
+    Born and raised in Hong Kong, Omeo began his professional career as
+    a teacher before coming to Honolulu for further education and hands-on
+    real estate experience. Being fluent in English, Cantonese, Mandarin,
+    and Hakka has proven invaluable in Honolulu's international marketplace.
+
+    Whether you're buying your first home, selling an investment property,
+    or relocating from overseas, Omeo goes the distance for you.
+  photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
+  # Replace photo with: "/images/omeo/headshot.jpg" when available
+
+brand:
+  callout_title: "Real Estate, For You"
+  callout_text: |
+    At 4You Hawaii International Realty, every client receives dedicated,
+    knowledgeable service — from first conversation to closing and beyond.
+
+languages_config:
+  chinese_enabled: false # Set to true when Chinese content is ready

@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf8f5;
+  --foreground: #1c1c1c;
+  --sand: #f0ebe3;
+  --navy: #0f1729;
+  --ocean: #1a3a4a;
+  --ocean-light: #2c5282;
+  --sky: #e8f0f5;
+  --gold: #c4a574;
+  --gold-light: #d4bc8e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-sand: var(--sand);
+  --color-navy: var(--navy);
+  --color-ocean: var(--ocean);
+  --color-ocean-light: var(--ocean-light);
+  --color-sky: var(--sky);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.section-padding {
+  @apply px-6 py-20 md:px-12 md:py-28 lg:px-20;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-sm bg-gold px-8 py-3.5 text-sm font-medium tracking-widest uppercase text-navy transition-all duration-300 hover:bg-gold-light;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center rounded-sm border border-white/80 px-8 py-3.5 text-sm font-medium tracking-widest uppercase text-white transition-all duration-300 hover:bg-white/10;
+}
+
+.btn-outline-dark {
+  @apply inline-flex items-center justify-center rounded-sm border border-navy/30 px-8 py-3.5 text-sm font-medium tracking-widest uppercase text-navy transition-all duration-300 hover:border-navy hover:bg-navy hover:text-white;
 }
