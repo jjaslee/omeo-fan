@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { ActionCards } from "@/components/ActionCards";
 import { AgentPortrait } from "@/components/AgentPortrait";
-import { ListingCard } from "@/components/ListingCard";
+import { FeaturedListings } from "@/components/ListingCard";
 import { NeighborhoodCard } from "@/components/NeighborhoodCard";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { TrustIntro, AreasServed } from "@/components/TrustIntro";
@@ -150,13 +150,9 @@ export default function HomePage() {
             </Link>
           </div>
         </FadeIn>
-        <StaggerContainer className="mt-8 grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 md:mt-10">
-          {featured.map((listing) => (
-            <StaggerItem key={listing.id}>
-              <ListingCard listing={listing} />
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        <div className="mt-8 md:mt-10">
+          <FeaturedListings listings={featured} />
+        </div>
       </SectionWrapper>
 
       {/* Neighborhoods */}

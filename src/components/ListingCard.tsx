@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,15 +12,19 @@ import {
   formatSoldDate,
   formatStatus,
 } from "@/lib/format";
+import { ListingDetailModal } from "@/components/ListingDetailModal";
 
 interface ListingCardProps {
   listing: Listing;
   showDescription?: boolean;
+  /** When provided, card click is handled externally (e.g. shared grid modal) */
+  onSelect?: (listing: Listing) => void;
 }
 
 export function ListingCard({
   listing,
   showDescription = false,
+  onSelect,
 }: ListingCardProps) {
   const prefersReducedMotion = useReducedMotion();
   const isSample = listing.is_sample ?? false;
@@ -28,12 +33,8 @@ export function ListingCard({
   const soldDate = formatSoldDate(listing.sold_date);
   const addressLine = formatAddress(listing);
 
-  const cardContent = (
-    <article
-      className={`group overflow-hidden rounded-sm bg-white shadow-sm transition-shadow duration-300 hover:shadow-md ${
-        isSample ? "ring-1 ring-ocean/10" : ""
-      }`}
-    >
+  const cardInner = (
+    <>
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={listing.image}
@@ -67,6 +68,9 @@ export function ListingCard({
               {subLabel}
             </span>
           )}
+        </div>
+        <div className="absolute right-4 bottom-4 rounded-sm bg-white/90 px-2.5 py-1 text-[10px] tracking-wider text-ocean uppercase opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          View details
         </div>
       </div>
 
@@ -105,6 +109,26 @@ export function ListingCard({
           </p>
         )}
       </div>
+    </>
+  );
+
+  const cardContent = (
+    <article
+      role="button"
+      tabIndex={0}
+      onClick={() => onSelect?.(listing)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onSelect?.(listing);
+        }
+      }}
+      className={`group cursor-pointer overflow-hidden rounded-sm bg-white text-left shadow-sm transition-shadow duration-300 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold ${
+        isSample ? "ring-1 ring-ocean/10" : ""
+      }`}
+      aria-label={`View details for ${titleCase(listing, addressLine)}`}
+    >
+      {cardInner}
     </article>
   );
 
@@ -120,6 +144,14 @@ export function ListingCard({
   );
 }
 
+function titleCase(listing: Listing, addressLine: string): string {
+  const isSample = listing.is_sample ?? false;
+  return isSample
+    ? listing.address || addressLine
+    : `${listing.address}${listing.unit ? ` ${listing.unit}` : ""}`;
+}
+
+/** Grid with shared detail modal */
 export function ListingGrid({
   listings,
   showDescription = false,
@@ -127,6 +159,8 @@ export function ListingGrid({
   listings: Listing[];
   showDescription?: boolean;
 }) {
+  const [selected, setSelected] = useState<Listing | null>(null);
+
   if (listings.length === 0) {
     return (
       <div className="rounded-sm border border-sand bg-sky/20 px-8 py-16 text-center">
@@ -146,14 +180,44 @@ export function ListingGrid({
   }
 
   return (
-    <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
-      {listings.map((listing) => (
-        <ListingCard
-          key={listing.id}
-          listing={listing}
-          showDescription={showDescription}
-        />
-      ))}
-    </div>
+    <>
+      <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+        {listings.map((listing) => (
+          <ListingCard
+            key={listing.id}
+            listing={listing}
+            showDescription={showDescription}
+            onSelect={setSelected}
+          />
+        ))}
+      </div>
+      <ListingDetailModal
+        listing={selected}
+        onClose={() => setSelected(null)}
+      />
+    </>
+  );
+}
+
+/** Featured section for homepage — grid + modal with optional stagger wrapper */
+export function FeaturedListings({ listings }: { listings: Listing[] }) {
+  const [selected, setSelected] = useState<Listing | null>(null);
+
+  return (
+    <>
+      <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+        {listings.map((listing) => (
+          <ListingCard
+            key={listing.id}
+            listing={listing}
+            onSelect={setSelected}
+          />
+        ))}
+      </div>
+      <ListingDetailModal
+        listing={selected}
+        onClose={() => setSelected(null)}
+      />
+    </>
   );
 }
