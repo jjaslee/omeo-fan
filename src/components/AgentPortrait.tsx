@@ -14,8 +14,8 @@ export function AgentPortrait({ name, photo, credentials }: AgentPortraitProps) 
     <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-sm border border-sand bg-white shadow-sm">
       {isPlaceholder ? (
         <PlaceholderCard
-          label="Agent portrait pending"
-          description="Professional photography will be added once provided by the client."
+          label="Agent portrait pending client upload"
+          description="Professional photography will appear here once provided."
           variant="neutral"
           className="h-full border-0 bg-gradient-to-br from-sky/30 to-sand/40"
         />

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { AreaPageCta } from "@/components/PageCta";
 import { SectionWrapper } from "@/components/SectionHeading";
-import { MockupNotice } from "@/components/ui/PlaceholderCard";
 import { FadeIn } from "@/components/motion/FadeIn";
 import {
   getNeighborhoodBySlug,
@@ -61,7 +61,7 @@ export default async function NeighborhoodPage({ params }: Props) {
                 {neighborhood.name}
               </h1>
               <p className="mt-3 text-sm text-white/60">
-                Oʻahu neighborhood guide
+                Real estate on Oʻahu
               </p>
             </FadeIn>
           </div>
@@ -71,24 +71,19 @@ export default async function NeighborhoodPage({ params }: Props) {
       <SectionWrapper>
         <FadeIn>
           <div className="mx-auto max-w-3xl">
-            <MockupNotice
-              className="mb-8"
-              message="Neighborhood overview pending — local market copy to be provided by the agent."
-            />
             <div className="space-y-4 text-base leading-relaxed text-foreground/70">
               {neighborhood.description.trim().split("\n").map((para, i) => (
                 <p key={i}>{para.trim()}</p>
               ))}
             </div>
-            <Link
-              href="/contact"
-              className="btn-primary mt-10 inline-flex"
-            >
-              Ask About {neighborhood.name}
+            <Link href="/contact" className="btn-primary mt-10 inline-flex">
+              Ask Omeo About {neighborhood.name}
             </Link>
           </div>
         </FadeIn>
       </SectionWrapper>
+
+      <AreaPageCta areaName={neighborhood.name} />
     </>
   );
 }

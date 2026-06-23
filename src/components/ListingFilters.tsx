@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import { ListingGrid } from "@/components/ListingCard";
-import { MockupNotice } from "@/components/ui/PlaceholderCard";
 import type { Listing } from "@/lib/content/types";
-import { hasSampleListings } from "@/lib/format";
 
 type Filter = "all" | "active" | "pending";
 
@@ -14,7 +12,6 @@ interface ListingFiltersProps {
 
 export function ListingFilters({ listings }: ListingFiltersProps) {
   const [filter, setFilter] = useState<Filter>("all");
-  const showSampleNotice = hasSampleListings(listings);
 
   const filtered =
     filter === "all"
@@ -29,9 +26,11 @@ export function ListingFilters({ listings }: ListingFiltersProps) {
 
   return (
     <div className="space-y-8">
-      {showSampleNotice && (
-        <MockupNotice message="The listings below are sample layout previews. Real property details, photos, and pricing will replace these cards once provided by the agent." />
-      )}
+      <p className="text-sm leading-relaxed text-foreground/55">
+        The cards below show sample listing layouts. Real property details,
+        photography, and pricing will replace these previews once provided by
+        the agent.
+      </p>
 
       <div
         className="flex flex-wrap gap-2 border-b border-sand pb-1"

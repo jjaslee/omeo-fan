@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AgentPortrait } from "@/components/AgentPortrait";
+import { PageCta } from "@/components/PageCta";
 import { SectionHeading, SectionWrapper } from "@/components/SectionHeading";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContainer";
@@ -90,13 +91,12 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      {/* Value sections */}
       <SectionWrapper className="bg-sky/30">
         <FadeIn>
           <SectionHeading
             label="Approach"
             title="How Omeo Supports Clients"
-            description="General service areas — specific claims and credentials to be confirmed with the client."
+            description="Thoughtful guidance for buyers, sellers, and relocating clients across Oʻahu."
           />
         </FadeIn>
         <StaggerContainer className="mt-10 grid gap-6 md:grid-cols-3 md:mt-12">
@@ -112,6 +112,8 @@ export default function AboutPage() {
           ))}
         </StaggerContainer>
       </SectionWrapper>
+
+      <PageCta />
     </>
   );
 }

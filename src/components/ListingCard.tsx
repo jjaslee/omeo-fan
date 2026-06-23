@@ -7,6 +7,7 @@ import type { Listing } from "@/lib/content/types";
 import {
   formatAddress,
   formatPrice,
+  formatSampleSubLabel,
   formatSoldDate,
   formatStatus,
 } from "@/lib/format";
@@ -23,6 +24,7 @@ export function ListingCard({
   const prefersReducedMotion = useReducedMotion();
   const isSample = listing.is_sample ?? false;
   const statusLabel = formatStatus(listing.status, isSample);
+  const subLabel = formatSampleSubLabel(isSample, listing.status);
   const soldDate = formatSoldDate(listing.sold_date);
   const addressLine = formatAddress(listing);
 
@@ -37,7 +39,7 @@ export function ListingCard({
           src={listing.image}
           alt={
             isSample
-              ? `Sample listing layout — ${listing.city} area, ${listing.property_type ?? "property"}`
+              ? `${addressLine} — sample property card layout`
               : addressLine
           }
           fill
@@ -46,11 +48,11 @@ export function ListingCard({
           }`}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        <div className="absolute top-4 left-4 flex flex-col gap-2">
+        <div className="absolute top-4 left-4 flex max-w-[85%] flex-col gap-2">
           <span
             className={`px-3 py-1 text-[10px] font-medium tracking-widest uppercase ${
               isSample
-                ? "bg-white/90 text-ocean"
+                ? "bg-white/95 text-ocean"
                 : listing.status === "sold"
                   ? "bg-navy text-gold"
                   : listing.status === "pending"
@@ -60,9 +62,9 @@ export function ListingCard({
           >
             {statusLabel}
           </span>
-          {isSample && (
-            <span className="bg-navy/80 px-3 py-1 text-[10px] tracking-widest text-white/80 uppercase">
-              Details pending
+          {subLabel && (
+            <span className="bg-navy/85 px-3 py-1 text-[10px] leading-snug tracking-wide text-white/85">
+              {subLabel}
             </span>
           )}
         </div>
@@ -77,9 +79,9 @@ export function ListingCard({
             Closed {soldDate}
           </p>
         )}
-        <h3 className="mt-3 text-sm font-medium text-navy">
+        <h3 className="mt-3 text-sm font-medium leading-snug text-navy">
           {isSample
-            ? `${listing.city} Area · ${listing.property_type ?? "Property"}`
+            ? listing.address || addressLine
             : `${listing.address}${listing.unit ? ` ${listing.unit}` : ""}`}
         </h3>
         {!isSample && (
@@ -87,7 +89,10 @@ export function ListingCard({
             {listing.city}, {listing.state} {listing.zip}
           </p>
         )}
-        <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-xs tracking-wider text-foreground/50 uppercase">
+        {isSample && (
+          <p className="mt-1 text-xs text-foreground/45">{listing.city}, Oʻahu</p>
+        )}
+        <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-xs tracking-wider text-foreground/45 uppercase">
           <span>{listing.beds} Beds</span>
           <span aria-hidden="true">·</span>
           <span>{listing.baths} Baths</span>
@@ -124,11 +129,14 @@ export function ListingGrid({
 }) {
   if (listings.length === 0) {
     return (
-      <div className="rounded-sm border border-dashed border-navy/15 bg-sky/20 px-8 py-16 text-center">
-        <p className="font-serif text-xl text-navy">Listings coming soon</p>
+      <div className="rounded-sm border border-sand bg-sky/20 px-8 py-16 text-center">
+        <p className="font-serif text-xl text-navy">Active listings</p>
         <p className="mt-2 text-sm text-foreground/60">
-          Active properties will appear here once provided.{" "}
-          <Link href="/contact" className="text-ocean-light underline-offset-2 hover:underline">
+          Properties will be displayed here once available.{" "}
+          <Link
+            href="/contact"
+            className="text-ocean-light underline-offset-2 hover:underline"
+          >
             Contact Omeo
           </Link>{" "}
           for current availability.

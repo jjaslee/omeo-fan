@@ -16,8 +16,8 @@ export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) 
   if (testimonials.length === 0) {
     return (
       <PlaceholderCard
-        label="Client testimonial pending"
-        description="Verified client stories will be displayed here once provided and approved for publication."
+        label="Client testimonials"
+        description="Client testimonials will be added after client review."
         variant="light"
         className="mx-auto max-w-2xl py-14"
       />

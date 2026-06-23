@@ -1,27 +1,23 @@
 # ============================================
 # CLIENT TESTIMONIALS
-# Set visible: true when Omeo provides real quotes
+# Set visible: true when Omeo provides real quotes with permission
 # ============================================
 
 testimonials:
   - quote: |
-      PLACEHOLDER: Ask Omeo for a real client testimonial.
-      Omeo was patient, knowledgeable, and always available to answer our questions
-      throughout the entire home buying process.
+      Testimonial pending client review.
     author: "Client Name"
     location: "Honolulu, HI"
     visible: false
 
   - quote: |
-      PLACEHOLDER: Second testimonial from Omeo.
-      His fluency in Mandarin made our overseas purchase seamless and stress-free.
-    author: "International Buyer"
-    location: "Hong Kong"
+      Testimonial pending client review.
+    author: "Client"
+    location: "Oʻahu, HI"
     visible: false
 
   - quote: |
-      PLACEHOLDER: Third testimonial from Omeo.
-      We sold our home above asking thanks to Omeo's strategic pricing and marketing.
-    author: "Seller"
-    location: "Kailua, HI"
+      Testimonial pending client review.
+    author: "Client"
+    location: "Oʻahu, HI"
     visible: false

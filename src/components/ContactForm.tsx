@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { MockupNotice } from "@/components/ui/PlaceholderCard";
 
 interface ContactFormProps {
   agentName: string;
@@ -37,9 +36,6 @@ export function ContactForm({
           Your consultation request has been received. {agentName} will be in
           touch shortly.
         </p>
-        <p className="mt-4 text-xs text-foreground/45">
-          Mockup preview — form submission is not yet connected to email.
-        </p>
       </div>
     );
   }
@@ -55,8 +51,6 @@ export function ContactForm({
           Oʻahu real estate goals.
         </p>
       </div>
-
-      <MockupNotice message="This contact form is a design preview. Submissions are not yet routed to email — backend integration pending." />
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid gap-6 sm:grid-cols-2">
@@ -175,9 +169,7 @@ function Field({
         {required && <span className="text-gold"> *</span>}
       </label>
       {children}
-      {hint && (
-        <p className="mt-1.5 text-xs text-foreground/45">{hint}</p>
-      )}
+      {hint && <p className="mt-1.5 text-xs text-foreground/45">{hint}</p>}
     </div>
   );
 }

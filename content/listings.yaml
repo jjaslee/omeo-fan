@@ -1,7 +1,6 @@
 # ============================================
-# PROPERTY LISTINGS
-# is_sample: true = demo layout card (not a real listing)
-# CLIENT: Replace sample entries with real MLS-approved listings
+# PROPERTY LISTINGS — sample layout previews only
+# CLIENT: Replace with real MLS-approved listings (set is_sample: false)
 # ============================================
 
 active:
@@ -9,7 +8,7 @@ active:
     visible: true
     is_sample: true
     status: "active"
-    address: "Sample Listing"
+    address: "Honolulu Condo Listing Preview"
     unit: ""
     city: "Honolulu"
     state: "HI"
@@ -20,11 +19,10 @@ active:
     sqft: 1180
     property_type: "Condo"
     description: |
-      Listing details pending. This card demonstrates the layout for an active
-      Honolulu-area condominium listing.
-    features:
-      - "Layout preview"
-      - "Details pending"
+      A preview of how an active Honolulu condominium listing will appear on
+      this site. Property details and photography will be added after client
+      approval.
+    features: []
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80"
     featured: true
 
@@ -32,7 +30,7 @@ active:
     visible: true
     is_sample: true
     status: "active"
-    address: "Sample Listing"
+    address: "Kailua Home Listing Preview"
     unit: ""
     city: "Kailua"
     state: "HI"
@@ -43,11 +41,9 @@ active:
     sqft: 2100
     property_type: "Single Family"
     description: |
-      Listing details pending. This card demonstrates the layout for a Kailua-area
-      single-family home listing.
-    features:
-      - "Layout preview"
-      - "Details pending"
+      A preview of how a Kailua single-family listing will appear on this site.
+      Property details and photography will be added after client approval.
+    features: []
     image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80"
     featured: true
 
@@ -55,7 +51,7 @@ active:
     visible: true
     is_sample: true
     status: "active"
-    address: "Sample Listing"
+    address: "Kapolei Home Listing Preview"
     unit: ""
     city: "Kapolei"
     state: "HI"
@@ -66,11 +62,9 @@ active:
     sqft: 1950
     property_type: "Single Family"
     description: |
-      Listing details pending. This card demonstrates the layout for a Kapolei-area
-      single-family home listing.
-    features:
-      - "Layout preview"
-      - "Details pending"
+      A preview of how a Kapolei single-family listing will appear on this site.
+      Property details and photography will be added after client approval.
+    features: []
     image: "https://images.unsplash.com/photo-1600585154340-be6162a9a0c9?w=800&q=80"
     featured: true
 
@@ -78,7 +72,7 @@ active:
     visible: true
     is_sample: true
     status: "pending"
-    address: "Sample Listing"
+    address: "Honolulu Condo Listing Preview"
     unit: ""
     city: "Honolulu"
     state: "HI"
@@ -89,11 +83,9 @@ active:
     sqft: 720
     property_type: "Condo"
     description: |
-      Listing details pending. This card demonstrates the layout for a pending
-      Honolulu-area listing.
-    features:
-      - "Layout preview"
-      - "Details pending"
+      A preview of how a pending Honolulu listing will appear on this site.
+      Property details and photography will be added after client approval.
+    features: []
     image: "https://images.unsplash.com/photo-1502672260266-1c1ef2cd9361?w=800&q=80"
     featured: false
 
@@ -102,7 +94,7 @@ sold:
     visible: true
     is_sample: true
     status: "sold"
-    address: "Sample Listing"
+    address: "Honolulu Condo — Sold Property Preview"
     unit: ""
     city: "Honolulu"
     state: "HI"
@@ -114,7 +106,8 @@ sold:
     sqft: 1650
     property_type: "Condo"
     description: |
-      Sold listing details pending. This card demonstrates the portfolio layout.
+      A preview of how a sold Honolulu condominium will appear in the portfolio.
+      Transaction details will be added after client approval.
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
     featured: true
 
@@ -122,7 +115,7 @@ sold:
     visible: true
     is_sample: true
     status: "sold"
-    address: "Sample Listing"
+    address: "Kailua Home — Sold Property Preview"
     unit: ""
     city: "Kailua"
     state: "HI"
@@ -132,7 +125,7 @@ sold:
     beds: 3
     baths: 3
     sqft: 1832
-    property_type: "Condo"
+    property_type: "Single Family"
     image: "https://images.unsplash.com/photo-1605276374101-dee2a0ed3cd6?w=800&q=80"
     featured: true
 
@@ -140,7 +133,7 @@ sold:
     visible: true
     is_sample: true
     status: "sold"
-    address: "Sample Listing"
+    address: "Kapolei Home — Sold Property Preview"
     unit: ""
     city: "Kapolei"
     state: "HI"
@@ -158,7 +151,7 @@ sold:
     visible: true
     is_sample: true
     status: "sold"
-    address: "Sample Listing"
+    address: "Ewa Beach Home — Sold Property Preview"
     unit: ""
     city: "Ewa Beach"
     state: "HI"
@@ -176,7 +169,7 @@ sold:
     visible: true
     is_sample: true
     status: "sold"
-    address: "Sample Listing"
+    address: "Mililani Home — Sold Property Preview"
     unit: ""
     city: "Mililani"
     state: "HI"
@@ -194,7 +187,7 @@ sold:
     visible: true
     is_sample: true
     status: "sold"
-    address: "Sample Listing"
+    address: "Honolulu Condo — Sold Property Preview"
     unit: ""
     city: "Honolulu"
     state: "HI"
@@ -208,23 +201,10 @@ sold:
     image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80"
     featured: false
 
-# --- COPY THIS TEMPLATE FOR NEW LISTINGS ---
+# --- TEMPLATE FOR REAL LISTINGS ---
 # - id: "listing-XXX"
 #   visible: true
 #   is_sample: false
 #   status: "active"
 #   address: "123 Main Street"
-#   unit: ""
-#   city: "Honolulu"
-#   state: "HI"
-#   zip: "96815"
-#   price: 1250000
-#   beds: 3
-#   baths: 2
-#   sqft: 1450
-#   property_type: "Condo"
-#   description: |
-#     Your description here.
-#   features: []
-#   image: "/images/listings/listing-XXX/photo.jpg"
-#   featured: false
+#   ...

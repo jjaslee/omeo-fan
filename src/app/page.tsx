@@ -7,7 +7,6 @@ import { NeighborhoodCard } from "@/components/NeighborhoodCard";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { TrustIntro, AreasServed } from "@/components/TrustIntro";
 import { SectionHeading, SectionWrapper } from "@/components/SectionHeading";
-import { MockupNotice } from "@/components/ui/PlaceholderCard";
 import { FadeIn } from "@/components/motion/FadeIn";
 import {
   StaggerContainer,
@@ -20,7 +19,6 @@ import {
   getVisibleNeighborhoods,
   getVisibleTestimonials,
 } from "@/lib/content/load";
-import { hasSampleListings } from "@/lib/format";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -35,7 +33,6 @@ export default function HomePage() {
   const featured = getFeaturedListings().slice(0, 6);
   const neighborhoods = getVisibleNeighborhoods().slice(0, 6);
   const testimonials = getVisibleTestimonials();
-  const sampleFeatured = hasSampleListings(featured);
 
   return (
     <>
@@ -126,7 +123,7 @@ export default function HomePage() {
           <SectionHeading
             label="Client Stories"
             title="What Clients Say"
-            description="Verified testimonials will appear here once provided."
+            description="Client testimonials will be added after client review."
             light
           />
           <div className="mt-10 md:mt-12">
@@ -142,7 +139,7 @@ export default function HomePage() {
             <SectionHeading
               label="Portfolio Preview"
               title="Featured Properties"
-              description="Sample listing layouts shown below — real properties to be added."
+              description="Sample listing layouts shown below. Real properties will be added after client approval."
               align="left"
             />
             <Link
@@ -153,12 +150,6 @@ export default function HomePage() {
             </Link>
           </div>
         </FadeIn>
-        {sampleFeatured && (
-          <MockupNotice
-            className="mt-8"
-            message="Featured cards below are sample layouts demonstrating how active and sold listings will appear."
-          />
-        )}
         <StaggerContainer className="mt-8 grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 md:mt-10">
           {featured.map((listing) => (
             <StaggerItem key={listing.id}>

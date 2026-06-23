@@ -1,4 +1,5 @@
 import { ListingFilters } from "@/components/ListingFilters";
+import { PageCta } from "@/components/PageCta";
 import { SectionWrapper } from "@/components/SectionHeading";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { getAllActiveAndPending } from "@/lib/content/load";
@@ -39,6 +40,12 @@ export default function ListingsPage() {
           <ListingFilters listings={listings} />
         </FadeIn>
       </SectionWrapper>
+
+      <PageCta
+        title="Interested in a Property?"
+        description="Reach out to schedule a showing, ask about a listing, or discuss your home search on Oʻahu."
+        buttonLabel="Schedule a Consultation"
+      />
     </>
   );
 }

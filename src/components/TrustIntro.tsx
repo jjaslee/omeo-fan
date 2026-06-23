@@ -33,7 +33,7 @@ export function AreasServed({ areas }: AreasServedProps) {
           <SectionHeading
             label="Service Areas"
             title="Areas Served on Oʻahu"
-            description="Supporting buyers and sellers across Honolulu and surrounding communities. Specific neighborhood expertise to be confirmed with the client."
+            description="Supporting buyers and sellers across Honolulu and surrounding communities throughout greater Oʻahu."
             light
           />
         </div>

@@ -1,6 +1,6 @@
 # ============================================
 # OAHU NEIGHBORHOODS
-# CLIENT: Replace descriptions with Omeo's local market expertise
+# CLIENT: Replace with Omeo's preferred local area copy
 # ============================================
 
 neighborhoods:
@@ -8,46 +8,62 @@ neighborhoods:
     name: "Honolulu"
     image: "https://images.unsplash.com/photo-1540959736672-0319f815fc6d?w=800&q=80"
     description: |
-      Area overview pending — client to provide local expertise on Honolulu
-      neighborhoods, condo markets, and urban living on Oʻahu.
+      Honolulu is the urban heart of Oʻahu — a hub for condominium living,
+      walkable neighborhoods, and diverse housing options across the city.
+      Whether you are exploring downtown, Ala Moana, or surrounding districts,
+      Omeo Fan can help you navigate the buying and selling process with
+      thoughtful, client-first guidance.
     visible: true
 
   - slug: "kailua"
     name: "Kailua"
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
     description: |
-      Area overview pending — client to provide local expertise on Kailua and
-      windward Oʻahu communities.
+      Kailua sits on Oʻahu's windward coast, known for its beaches, relaxed
+      pace, and strong community feel. Families and lifestyle buyers often
+      look here for single-family homes and a quieter alternative to urban
+      Honolulu. Reach out to discuss current opportunities in Kailua and nearby
+      windward communities.
     visible: true
 
   - slug: "waikiki"
     name: "Waikīkī"
     image: "https://images.unsplash.com/photo-1540959736672-0319f815fc6d?w=800&q=80"
     description: |
-      Area overview pending — client to provide local expertise on Waikīkī
-      condo living and investment properties.
+      Waikīkī is one of the most recognized destinations in Hawaiʻi, offering
+      high-rise living, resort amenities, and proximity to dining, beaches,
+      and entertainment. Buyers interested in Waikīkī condos often value
+      location, views, and walkability. Omeo can guide you through the
+      considerations unique to this market.
     visible: true
 
   - slug: "kapolei"
     name: "Kapolei"
     image: "https://images.unsplash.com/photo-1600585154340-be6162a9a0c9?w=800&q=80"
     description: |
-      Area overview pending — client to provide local expertise on Kapolei and
-      west Oʻahu developments.
+      Kapolei is often called Oʻahu's second city — a growing area on the
+      leeward side with newer developments, planned communities, and family-
+      oriented neighborhoods. If you are considering west Oʻahu, Kapolei and
+      its surrounding areas may offer the space and amenities you are looking for.
     visible: true
 
   - slug: "kaneohe"
     name: "Kaneohe"
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
     description: |
-      Area overview pending — client to provide local expertise on Kaneohe and
-      the Koʻolau region.
+      Kaneohe offers windward living with striking Koʻolau mountain views and
+      convenient access to both the North Shore and Honolulu. The area blends
+      residential neighborhoods with natural beauty, making it a compelling
+      option for buyers seeking balance between accessibility and tranquility.
     visible: true
 
   - slug: "ewa-beach"
     name: "Ewa Beach"
     image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80"
     description: |
-      Area overview pending — client to provide local expertise on Ewa Beach
-      and leeward Oʻahu communities.
+      Ewa Beach and the surrounding leeward communities offer coastal living
+      with a suburban feel. Newer construction, community amenities, and
+      relative value compared to central Honolulu draw many buyers to this
+      part of the island. Contact Omeo to explore options in Ewa Beach and
+      nearby areas.
     visible: true

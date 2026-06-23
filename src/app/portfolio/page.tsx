@@ -1,22 +1,20 @@
 import { ListingGrid } from "@/components/ListingCard";
+import { PageCta } from "@/components/PageCta";
 import { SectionWrapper } from "@/components/SectionHeading";
-import { MockupNotice } from "@/components/ui/PlaceholderCard";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { getSoldListings } from "@/lib/content/load";
 import { buildPageMetadata } from "@/lib/seo";
-import { hasSampleListings } from "@/lib/format";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Sold Portfolio | Oʻahu Real Estate",
   description:
-    "View Omeo Fan's sold property portfolio across Honolulu, Kailua, Kapolei, and greater Oʻahu. Past transactions and results to be updated with verified client data.",
+    "View Omeo Fan's sold property portfolio across Honolulu, Kailua, Kapolei, and greater Oʻahu.",
   path: "/portfolio",
 });
 
 export default function PortfolioPage() {
   const sold = getSoldListings();
-  const showSampleNotice = hasSampleListings(sold);
 
   return (
     <>
@@ -30,8 +28,8 @@ export default function PortfolioPage() {
               Sold Portfolio
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-              A selection of closed transactions across Oʻahu. Portfolio details
-              will be updated once verified transaction data is provided.
+              Closed transactions across Oʻahu. Sample sold-property layouts are
+              shown below until verified portfolio details are added.
             </p>
           </FadeIn>
         </div>
@@ -39,15 +37,20 @@ export default function PortfolioPage() {
 
       <SectionWrapper>
         <FadeIn>
-          {showSampleNotice && (
-            <MockupNotice
-              className="mb-8"
-              message="Portfolio cards below are sample layouts. Real sold properties, prices, and dates will replace these once confirmed with the agent."
-            />
-          )}
+          <p className="mb-8 text-sm leading-relaxed text-foreground/55">
+            The cards below show sample sold-property layouts. Real closed
+            transactions, pricing, and dates will replace these previews once
+            provided by the agent.
+          </p>
           <ListingGrid listings={sold} />
         </FadeIn>
       </SectionWrapper>
+
+      <PageCta
+        title="Thinking of Selling?"
+        description="Request a complimentary consultation to discuss your home, your timeline, and how to prepare for the Oʻahu market."
+        buttonLabel="Schedule a Consultation"
+      />
     </>
   );
 }
