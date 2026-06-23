@@ -1,3 +1,4 @@
+import { PlaceholderCard } from "@/components/ui/PlaceholderCard";
 import Image from "next/image";
 
 interface AgentPortraitProps {
@@ -7,45 +8,51 @@ interface AgentPortraitProps {
 }
 
 export function AgentPortrait({ name, photo, credentials }: AgentPortraitProps) {
-  const initials = name
-    .split(" ")
-    .map((n) => n[0])
-    .join("");
-
-  const isPlaceholder = photo.includes("unsplash.com");
+  const isPlaceholder = !photo || photo.includes("unsplash.com");
 
   return (
-    <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-sm">
+    <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-sm border border-sand bg-white shadow-sm">
       {isPlaceholder ? (
-        <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-navy to-ocean">
-          <span className="font-serif text-6xl tracking-widest text-gold md:text-7xl">
-            {initials}
-          </span>
-          <p className="mt-4 text-xs tracking-[0.2em] text-white/40 uppercase">
-            Photo Coming Soon
-          </p>
-        </div>
+        <PlaceholderCard
+          label="Agent portrait pending"
+          description="Professional photography will be added once provided by the client."
+          variant="neutral"
+          className="h-full border-0 bg-gradient-to-br from-sky/30 to-sand/40"
+        />
       ) : (
         <Image
           src={photo}
-          alt={name}
+          alt={`${name}, Principal Broker — professional portrait`}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 400px"
         />
       )}
-      <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-navy/80 to-transparent p-6">
-        <div className="flex flex-wrap gap-2">
-          {credentials.map((cred) => (
-            <span
-              key={cred}
-              className="border border-gold/40 px-2 py-0.5 text-[10px] tracking-wider text-gold uppercase"
-            >
-              {cred}
-            </span>
-          ))}
+      {!isPlaceholder && (
+        <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-navy/80 to-transparent p-6">
+          <CredentialBadges credentials={credentials} />
         </div>
-      </div>
+      )}
+      {isPlaceholder && (
+        <div className="absolute right-0 bottom-0 left-0 border-t border-sand bg-white/90 p-5">
+          <CredentialBadges credentials={credentials} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function CredentialBadges({ credentials }: { credentials: string[] }) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {credentials.map((cred) => (
+        <span
+          key={cred}
+          className="border border-gold/30 bg-white/80 px-2.5 py-1 text-[10px] tracking-wider text-navy uppercase"
+        >
+          {cred}
+        </span>
+      ))}
     </div>
   );
 }

@@ -34,6 +34,20 @@ export interface SiteBrand {
   callout_text: string;
 }
 
+export interface ValueSection {
+  title: string;
+  description: string;
+}
+
+export interface TrustIntro {
+  title: string;
+  text: string;
+}
+
+export interface SiteSeo {
+  default_description: string;
+}
+
 export interface SiteConfig {
   agent: SiteAgent;
   contact: SiteContact;
@@ -41,6 +55,10 @@ export interface SiteConfig {
   languages: string[];
   about: SiteAbout;
   brand: SiteBrand;
+  trust_intro: TrustIntro;
+  areas_served: string[];
+  value_sections: ValueSection[];
+  seo: SiteSeo;
   languages_config: {
     chinese_enabled: boolean;
   };
@@ -49,6 +67,7 @@ export interface SiteConfig {
 export interface Listing {
   id: string;
   visible: boolean;
+  is_sample?: boolean;
   status: "active" | "pending" | "sold";
   address: string;
   unit?: string;

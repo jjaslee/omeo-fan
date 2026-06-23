@@ -10,6 +10,7 @@ interface HeroProps {
   tagline: string;
   headline: string;
   credentials: string[];
+  brokerage: string;
 }
 
 export function Hero({
@@ -18,63 +19,75 @@ export function Hero({
   tagline,
   headline,
   credentials,
+  brokerage,
 }: HeroProps) {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden md:min-h-screen">
       <Image
         src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
-        alt="Oahu coastline"
+        alt="Oʻahu coastline at golden hour — luxury real estate backdrop"
         fill
         priority
         className="object-cover"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/50 to-ocean/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/55 to-ocean/85" />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 pt-24 text-center md:px-12">
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-6 pt-28 pb-20 text-center md:px-12 md:pt-32">
         <HeroFade delay={0.1}>
-          <p className="text-xs tracking-[0.3em] text-gold uppercase">
-            Your Trusted Real Estate Guide
+          <p className="text-[11px] tracking-[0.35em] text-gold uppercase md:text-xs">
+            Principal Broker · {brokerage}
           </p>
         </HeroFade>
 
-        <HeroFade delay={0.25}>
-          <h1 className="mt-6 font-serif text-5xl font-light tracking-wide text-white md:text-7xl lg:text-8xl">
+        <HeroFade delay={0.22}>
+          <h1 className="mt-5 font-serif text-4xl font-light tracking-wide text-white sm:text-5xl md:text-7xl lg:text-8xl">
             {name}
           </h1>
         </HeroFade>
 
-        <HeroFade delay={0.4}>
-          <p className="mt-4 text-sm tracking-[0.2em] text-white/70 uppercase md:text-base">
-            {title} · {credentials.join(" · ")}
-          </p>
-        </HeroFade>
-
-        <HeroFade delay={0.5}>
-          <p className="mt-3 font-serif text-xl text-white/90 md:text-2xl">
+        <HeroFade delay={0.35}>
+          <p className="mt-4 font-serif text-lg text-white/90 sm:text-xl md:text-2xl">
             {tagline}
           </p>
         </HeroFade>
 
-        <HeroFade delay={0.6}>
-          <p className="mt-2 text-sm text-white/60">{headline}</p>
+        <HeroFade delay={0.45}>
+          <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-white/60">
+            {headline} · {title} · {credentials.join(" · ")}
+          </p>
         </HeroFade>
 
-        <HeroFade delay={0.75}>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/listings" className="btn-primary min-w-[180px]">
-              Search Homes
+        <HeroFade delay={0.58}>
+          <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:mx-auto lg:max-w-3xl">
+            <Link href="/listings" className="btn-primary w-full py-4 text-xs">
+              Buy a Home on Oʻahu
             </Link>
-            <Link href="/contact" className="btn-outline min-w-[180px]">
-              Get Home Value
+            <Link
+              href="/contact?interest=selling"
+              className="btn-outline w-full py-4 text-xs"
+            >
+              Sell Your Oʻahu Home
+            </Link>
+            <Link
+              href="/contact?interest=valuation"
+              className="btn-outline w-full py-4 text-xs sm:col-span-1"
+            >
+              Request a Home Valuation
+            </Link>
+            <Link
+              href="/contact?interest=relocation"
+              className="btn-outline w-full border-gold/40 py-4 text-xs text-gold hover:bg-gold/10 hover:text-gold sm:col-span-1"
+            >
+              Relocation Guidance
             </Link>
           </div>
         </HeroFade>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <HeroFade delay={1.2}>
-          <div className="flex flex-col items-center gap-2 text-white/40">
+      <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 md:block">
+        <HeroFade delay={1.1}>
+          <div className="flex flex-col items-center gap-2 text-white/35">
             <span className="text-[10px] tracking-widest uppercase">Scroll</span>
             <div className="h-8 w-px bg-gradient-to-b from-white/40 to-transparent" />
           </div>

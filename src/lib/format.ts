@@ -1,4 +1,5 @@
-export function formatPrice(price: number): string {
+export function formatPrice(price: number, isSample?: boolean): string {
+  if (isSample || price === 0) return "Price pending";
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -12,14 +13,20 @@ export function formatAddress(listing: {
   city: string;
   state: string;
   zip: string;
+  is_sample?: boolean;
 }): string {
+  if (listing.is_sample) {
+    return `Sample listing — ${listing.city} area`;
+  }
   const street = listing.unit
     ? `${listing.address} ${listing.unit}`
     : listing.address;
-  return `${street}, ${listing.city}, ${listing.state} ${listing.zip}`;
+  const zipPart = listing.zip ? ` ${listing.zip}` : "";
+  return `${street}, ${listing.city}, ${listing.state}${zipPart}`;
 }
 
-export function formatStatus(status: string): string {
+export function formatStatus(status: string, isSample?: boolean): string {
+  if (isSample) return "Sample layout";
   const labels: Record<string, string> = {
     active: "For Sale",
     pending: "Pending",
@@ -47,4 +54,10 @@ export function formatSoldDate(date?: string): string | null {
   ];
   const monthIndex = parseInt(month, 10) - 1;
   return `${monthNames[monthIndex]} ${year}`;
+}
+
+export function hasSampleListings(
+  listings: { is_sample?: boolean }[],
+): boolean {
+  return listings.some((l) => l.is_sample);
 }

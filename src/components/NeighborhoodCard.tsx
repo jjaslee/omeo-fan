@@ -19,7 +19,7 @@ export function NeighborhoodCard({ neighborhood }: NeighborhoodCardProps) {
     >
       <Image
         src={neighborhood.image}
-        alt={neighborhood.name}
+        alt={`${neighborhood.name}, Oʻahu — explore neighborhoods and real estate`}
         fill
         className="object-cover transition-transform duration-700 group-hover:scale-105"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -19,10 +19,30 @@ const site = getSiteConfig();
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.agent.name} | ${site.agent.tagline}`,
+    default: `${site.agent.name} | Oʻahu Real Estate Agent`,
     template: `%s | ${site.agent.name}`,
   },
-  description: site.about.short.trim(),
+  description: site.seo.default_description.trim(),
+  keywords: [
+    "Oahu real estate agent",
+    "Honolulu realtor",
+    "Oahu homes",
+    "buying a home in Oahu",
+    "selling a home in Oahu",
+    "Oahu relocation",
+  ],
+  openGraph: {
+    title: `${site.agent.name} | Oʻahu Real Estate Agent`,
+    description: site.seo.default_description.trim(),
+    siteName: site.brokerage.name,
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.agent.name} | Oʻahu Real Estate Agent`,
+    description: site.seo.default_description.trim(),
+  },
 };
 
 export default function RootLayout({
@@ -35,7 +55,7 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col text-foreground">
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

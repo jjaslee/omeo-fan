@@ -1,6 +1,7 @@
 # ============================================
 # Omeo Fan — Site Information
 # Edit this file to update contact info, bio, etc.
+# CLIENT CONTENT: see CLIENT-CONTENT.md for pending items
 # ============================================
 
 agent:
@@ -17,7 +18,7 @@ contact:
   phone_display: "(808) 258-6636"
   email: "omeofan@gmail.com"
   wechat: "omeo6636"
-  # wechat_qr: "/images/omeo/wechat-qr.png"  # Uncomment when Omeo sends QR code
+  # wechat_qr: "/images/omeo/wechat-qr.png"  # CLIENT: Uncomment when QR is provided
 
 brokerage:
   name: "4You Hawaii International Realty"
@@ -32,6 +33,26 @@ languages:
   - Cantonese
   - Mandarin
   - Hakka
+
+# Trust-focused intro for homepage
+trust_intro:
+  title: "Guidance for Every Oʻahu Move"
+  text: |
+    Omeo Fan helps buyers, sellers, and relocating clients navigate Oʻahu real
+    estate with clarity and confidence. From first-time purchases to investment
+    properties and international relocations, you receive thoughtful guidance
+    tailored to your goals — backed by MBA-level financial insight and local
+    market experience.
+
+# General service areas — confirm preferred wording with client
+areas_served:
+  - "Honolulu"
+  - "Kailua"
+  - "Kapolei"
+  - "Ewa Beach"
+  - "Mililani"
+  - "Pearl City"
+  - "Greater Oʻahu"
 
 about:
   short: |
@@ -52,14 +73,34 @@ about:
 
     Whether you're buying your first home, selling an investment property,
     or relocating from overseas, Omeo goes the distance for you.
-  photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
-  # Replace photo with: "/images/omeo/headshot.jpg" when available
+  photo: ""  # CLIENT: Set to "/images/omeo/headshot.jpg" when available
+
+# About page value sections — generic until client refines copy
+value_sections:
+  - title: "Client-First Guidance"
+    description: |
+      Every conversation starts with your goals — timeline, budget, and priorities.
+      Expect clear communication, honest advice, and a process designed around you.
+  - title: "Local Market Knowledge"
+    description: |
+      Navigate Oʻahu neighborhoods with insight into area character, market conditions,
+      and the details that matter when buying or selling on the island.
+  - title: "Buyer & Seller Support"
+    description: |
+      From property search and offer strategy to listing preparation and closing,
+      receive structured support at each stage of your real estate journey.
 
 brand:
   callout_title: "Real Estate, For You"
   callout_text: |
     At 4You Hawaii International Realty, every client receives dedicated,
     knowledgeable service — from first conversation to closing and beyond.
+
+seo:
+  default_description: |
+    Omeo Fan, Principal Broker at 4You Hawaii International Realty, helps buyers,
+    sellers, and relocating clients with Oʻahu real estate. MBA · RB-22037 ·
+    Honolulu & greater Oʻahu.
 
 languages_config:
   chinese_enabled: false # Set to true when Chinese content is ready

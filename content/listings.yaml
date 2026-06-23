@@ -1,133 +1,134 @@
 # ============================================
 # PROPERTY LISTINGS
-# To ADD a listing: copy the template at the bottom, fill in, set status.
-# To REMOVE: delete the block or set visible: false
-# To mark SOLD: change status to "sold" and optionally move to sold section
+# is_sample: true = demo layout card (not a real listing)
+# CLIENT: Replace sample entries with real MLS-approved listings
 # ============================================
 
 active:
   - id: "listing-001"
     visible: true
+    is_sample: true
     status: "active"
-    address: "123 PLACEHOLDER Avenue"
-    unit: "#1204"
+    address: "Sample Listing"
+    unit: ""
     city: "Honolulu"
     state: "HI"
-    zip: "96815"
-    price: 1450000
+    zip: ""
+    price: 0
     beds: 2
     baths: 2
     sqft: 1180
     property_type: "Condo"
     description: |
-      PLACEHOLDER: Property description from Omeo or MLS.
-      Panoramic ocean views from this luxury high-rise residence in the heart of Honolulu.
+      Listing details pending. This card demonstrates the layout for an active
+      Honolulu-area condominium listing.
     features:
-      - "Ocean views"
-      - "Floor-to-ceiling windows"
-      - "Resort-style amenities"
+      - "Layout preview"
+      - "Details pending"
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80"
     featured: true
 
   - id: "listing-002"
     visible: true
+    is_sample: true
     status: "active"
-    address: "456 PLACEHOLDER Drive"
+    address: "Sample Listing"
     unit: ""
     city: "Kailua"
     state: "HI"
-    zip: "96734"
-    price: 1895000
+    zip: ""
+    price: 0
     beds: 4
     baths: 3
     sqft: 2100
     property_type: "Single Family"
     description: |
-      PLACEHOLDER: Charming Kailua home steps from the beach.
-      Open floor plan with tropical landscaping and lanai living.
+      Listing details pending. This card demonstrates the layout for a Kailua-area
+      single-family home listing.
     features:
-      - "Walk to Kailua Beach"
-      - "Updated kitchen"
-      - "Private yard"
+      - "Layout preview"
+      - "Details pending"
     image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80"
     featured: true
 
   - id: "listing-003"
     visible: true
+    is_sample: true
     status: "active"
-    address: "789 PLACEHOLDER Street"
+    address: "Sample Listing"
     unit: ""
     city: "Kapolei"
     state: "HI"
-    zip: "96707"
-    price: 975000
+    zip: ""
+    price: 0
     beds: 4
     baths: 3
     sqft: 1950
     property_type: "Single Family"
     description: |
-      PLACEHOLDER: Modern family home in Kapolei with open-concept living
-      and proximity to shopping and schools.
+      Listing details pending. This card demonstrates the layout for a Kapolei-area
+      single-family home listing.
     features:
-      - "Solar panels"
-      - "Two-car garage"
-      - "Community pool"
+      - "Layout preview"
+      - "Details pending"
     image: "https://images.unsplash.com/photo-1600585154340-be6162a9a0c9?w=800&q=80"
     featured: true
 
   - id: "listing-004"
     visible: true
+    is_sample: true
     status: "pending"
-    address: "321 PLACEHOLDER Lane"
-    unit: "#805"
+    address: "Sample Listing"
+    unit: ""
     city: "Honolulu"
     state: "HI"
-    zip: "96814"
-    price: 825000
+    zip: ""
+    price: 0
     beds: 1
     baths: 1
     sqft: 720
     property_type: "Condo"
     description: |
-      PLACEHOLDER: Urban condo in Ala Moana area. Perfect for investors
-      or first-time buyers seeking walkable city living.
+      Listing details pending. This card demonstrates the layout for a pending
+      Honolulu-area listing.
     features:
-      - "Ala Moana proximity"
-      - "In-unit laundry"
-      - "Secure building"
+      - "Layout preview"
+      - "Details pending"
     image: "https://images.unsplash.com/photo-1502672260266-1c1ef2cd9361?w=800&q=80"
     featured: false
 
 sold:
   - id: "sold-001"
     visible: true
+    is_sample: true
     status: "sold"
-    address: "100 PLACEHOLDER Boulevard"
+    address: "Sample Listing"
     unit: ""
     city: "Honolulu"
     state: "HI"
-    zip: "96816"
-    price: 1310000
-    sold_date: "2025-08"
+    zip: ""
+    price: 0
+    sold_date: ""
     beds: 3
     baths: 2
     sqft: 1650
     property_type: "Condo"
     description: |
-      PLACEHOLDER: Sold listing — replace with actual transaction details from Omeo.
+      Sold listing details pending. This card demonstrates the portfolio layout.
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
     featured: true
 
   - id: "sold-002"
     visible: true
+    is_sample: true
     status: "sold"
-    address: "200 PLACEHOLDER Way"
+    address: "Sample Listing"
     unit: ""
     city: "Kailua"
     state: "HI"
-    zip: "96734"
-    price: 1250000
-    sold_date: "2025-05"
+    zip: ""
+    price: 0
+    sold_date: ""
     beds: 3
     baths: 3
     sqft: 1832
@@ -137,14 +138,15 @@ sold:
 
   - id: "sold-003"
     visible: true
+    is_sample: true
     status: "sold"
-    address: "300 PLACEHOLDER Court"
+    address: "Sample Listing"
     unit: ""
     city: "Kapolei"
     state: "HI"
-    zip: "96707"
-    price: 1100000
-    sold_date: "2025-02"
+    zip: ""
+    price: 0
+    sold_date: ""
     beds: 5
     baths: 4
     sqft: 2214
@@ -154,14 +156,15 @@ sold:
 
   - id: "sold-004"
     visible: true
+    is_sample: true
     status: "sold"
-    address: "400 PLACEHOLDER Road"
+    address: "Sample Listing"
     unit: ""
     city: "Ewa Beach"
     state: "HI"
-    zip: "96706"
-    price: 1050000
-    sold_date: "2024-11"
+    zip: ""
+    price: 0
+    sold_date: ""
     beds: 4
     baths: 3
     sqft: 1775
@@ -171,14 +174,15 @@ sold:
 
   - id: "sold-005"
     visible: true
+    is_sample: true
     status: "sold"
-    address: "500 PLACEHOLDER Place"
+    address: "Sample Listing"
     unit: ""
     city: "Mililani"
     state: "HI"
-    zip: "96789"
-    price: 1035000
-    sold_date: "2024-08"
+    zip: ""
+    price: 0
+    sold_date: ""
     beds: 3
     baths: 2
     sqft: 1236
@@ -188,14 +192,15 @@ sold:
 
   - id: "sold-006"
     visible: true
+    is_sample: true
     status: "sold"
-    address: "600 PLACEHOLDER Circle"
-    unit: "#1501"
+    address: "Sample Listing"
+    unit: ""
     city: "Honolulu"
     state: "HI"
-    zip: "96813"
-    price: 980000
-    sold_date: "2024-05"
+    zip: ""
+    price: 0
+    sold_date: ""
     beds: 2
     baths: 2
     sqft: 1100
@@ -206,19 +211,20 @@ sold:
 # --- COPY THIS TEMPLATE FOR NEW LISTINGS ---
 # - id: "listing-XXX"
 #   visible: true
-#   status: "active"          # active | pending | sold
-#   address: ""
+#   is_sample: false
+#   status: "active"
+#   address: "123 Main Street"
 #   unit: ""
-#   city: ""
+#   city: "Honolulu"
 #   state: "HI"
-#   zip: ""
-#   price: 0
-#   beds: 0
-#   baths: 0
-#   sqft: 0
-#   property_type: ""
+#   zip: "96815"
+#   price: 1250000
+#   beds: 3
+#   baths: 2
+#   sqft: 1450
+#   property_type: "Condo"
 #   description: |
 #     Your description here.
 #   features: []
-#   image: "/images/listings/your-id/photo.jpg"
+#   image: "/images/listings/listing-XXX/photo.jpg"
 #   featured: false

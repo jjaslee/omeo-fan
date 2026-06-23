@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { PlaceholderCard } from "@/components/ui/PlaceholderCard";
 import type { Testimonial } from "@/lib/content/types";
 
 interface TestimonialCarouselProps {
@@ -14,12 +15,12 @@ export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) 
 
   if (testimonials.length === 0) {
     return (
-      <div className="rounded-sm border border-dashed border-white/20 px-8 py-12 text-center">
-        <p className="font-serif text-xl text-white/80">Client Stories</p>
-        <p className="mt-2 text-sm text-white/50">
-          Testimonials coming soon — check back after launch.
-        </p>
-      </div>
+      <PlaceholderCard
+        label="Client testimonial pending"
+        description="Verified client stories will be displayed here once provided and approved for publication."
+        variant="light"
+        className="mx-auto max-w-2xl py-14"
+      />
     );
   }
 
