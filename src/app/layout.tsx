@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { SiteShell } from "@/components/layout/SiteShell";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { getSiteConfig } from "@/lib/content/load";
 import "./globals.css";
 
@@ -56,6 +57,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col text-foreground">
+        <SmoothScroll />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

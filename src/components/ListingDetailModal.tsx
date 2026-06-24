@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import type { Listing } from "@/lib/content/types";
+import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 import {
   formatAddress,
   formatPrice,
@@ -24,6 +25,8 @@ export function ListingDetailModal({
 }: ListingDetailModalProps) {
   const prefersReducedMotion = useReducedMotion();
 
+  useBodyScrollLock(Boolean(listing));
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -33,10 +36,8 @@ export function ListingDetailModal({
 
   useEffect(() => {
     if (!listing) return;
-    document.body.style.overflow = "hidden";
     window.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [listing, handleKeyDown]);
@@ -94,7 +95,7 @@ function ModalContent({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center sm:p-6"
+      className="fixed inset-0 z-[100] flex items-end justify-center px-4 pt-20 pb-4 sm:items-center sm:px-6 sm:pt-24 sm:pb-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby="listing-modal-title"
@@ -112,14 +113,14 @@ function ModalContent({
       />
 
       <motion.div
-        className="relative z-10 flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-t-sm bg-white shadow-2xl sm:max-h-[90vh] sm:rounded-sm"
+        className="relative z-10 flex max-h-[calc(100vh-5.5rem)] w-full max-w-2xl flex-col overflow-hidden rounded-t-sm bg-white shadow-2xl sm:max-h-[calc(100vh-7rem)] sm:rounded-sm"
         initial="hidden"
         animate="visible"
         exit="hidden"
         variants={panelVariants}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="relative aspect-[16/10] shrink-0 overflow-hidden sm:aspect-[16/9]">
+        <div className="relative aspect-[16/9] shrink-0 overflow-hidden sm:aspect-[2/1]">
           <Image
             src={listing.image}
             alt={
@@ -175,7 +176,10 @@ function ModalContent({
           </div>
         </div>
 
-        <div className="overflow-y-auto px-6 py-6 sm:px-8 sm:py-8">
+        <div
+          data-lenis-prevent
+          className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 py-5 sm:px-7 sm:py-6"
+        >
           <p className="font-serif text-2xl text-navy sm:text-3xl">
             {formatPrice(listing.price, isSample)}
           </p>

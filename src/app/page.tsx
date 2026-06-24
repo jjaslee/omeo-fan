@@ -3,15 +3,11 @@ import { Hero } from "@/components/Hero";
 import { ActionCards } from "@/components/ActionCards";
 import { AgentPortrait } from "@/components/AgentPortrait";
 import { FeaturedListings } from "@/components/ListingCard";
-import { NeighborhoodCard } from "@/components/NeighborhoodCard";
+import { OahuNeighborhoodMap } from "@/components/OahuNeighborhoodMap";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { TrustIntro, AreasServed } from "@/components/TrustIntro";
 import { SectionHeading, SectionWrapper } from "@/components/SectionHeading";
 import { FadeIn } from "@/components/motion/FadeIn";
-import {
-  StaggerContainer,
-  StaggerItem,
-} from "@/components/motion/StaggerContainer";
 import { buildPageMetadata } from "@/lib/seo";
 import {
   getSiteConfig,
@@ -172,13 +168,9 @@ export default function HomePage() {
             </Link>
           </div>
         </FadeIn>
-        <StaggerContainer className="mt-8 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 md:mt-10">
-          {neighborhoods.map((n) => (
-            <StaggerItem key={n.slug}>
-              <NeighborhoodCard neighborhood={n} />
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        <FadeIn delay={0.1}>
+          <OahuNeighborhoodMap neighborhoods={neighborhoods} compact />
+        </FadeIn>
       </SectionWrapper>
 
       {/* Valuation CTA */}

@@ -1,8 +1,7 @@
-import { NeighborhoodCard } from "@/components/NeighborhoodCard";
+import { OahuNeighborhoodMap } from "@/components/OahuNeighborhoodMap";
 import { PageCta } from "@/components/PageCta";
 import { SectionWrapper } from "@/components/SectionHeading";
 import { FadeIn } from "@/components/motion/FadeIn";
-import { StaggerContainer, StaggerItem } from "@/components/motion/StaggerContainer";
 import { getVisibleNeighborhoods } from "@/lib/content/load";
 import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -29,21 +28,17 @@ export default function NeighborhoodsPage() {
               Explore Neighborhoods
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
-              From urban Honolulu to windward Kailua — discover the communities
-              that make Oʻahu unique.
+              Hover over a dot on the map to preview each area, then click for
+              full details.
             </p>
           </FadeIn>
         </div>
       </section>
 
       <SectionWrapper>
-        <StaggerContainer className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-          {neighborhoods.map((n) => (
-            <StaggerItem key={n.slug}>
-              <NeighborhoodCard neighborhood={n} />
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        <FadeIn>
+          <OahuNeighborhoodMap neighborhoods={neighborhoods} />
+        </FadeIn>
       </SectionWrapper>
 
       <PageCta

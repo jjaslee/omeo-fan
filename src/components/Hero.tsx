@@ -24,14 +24,19 @@ export function Hero({
   return (
     <section className="relative flex min-h-[92vh] items-center justify-center overflow-hidden md:min-h-screen">
       <Image
-        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
-        alt="Oʻahu coastline at golden hour — luxury real estate backdrop"
+        src="/images/hero-waikiki.jpg"
+        alt="Waikīkī and Honolulu skyline along Oʻahu's south shore"
         fill
         priority
-        className="object-cover"
+        unoptimized
+        className="object-cover object-center"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/55 to-ocean/85" />
+      <div className="absolute inset-0 bg-navy/40" aria-hidden />
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/60 to-ocean/85"
+        aria-hidden
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6 pt-28 pb-20 text-center md:px-12 md:pt-32">
         <HeroFade delay={0.1}>

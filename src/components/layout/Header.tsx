@@ -33,7 +33,7 @@ export function Header({
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 right-0 left-0 z-50 bg-navy/95 backdrop-blur-sm">
+    <header className="fixed top-0 right-0 left-0 z-[110] bg-navy/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12 lg:px-20">
         <Link href="/" className="group">
           <span className="font-serif text-xl tracking-widest text-gold uppercase md:text-2xl">
